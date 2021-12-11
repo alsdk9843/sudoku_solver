@@ -63,25 +63,27 @@ gen_matrix = list()
 gen_matrix_row_len = len(gen_matrix_row)
 gen_matrix_len = len(gen_matrix)
 
+# Add the Sudoku problem values in the 'matrix'
+# in the form of [number, i_pos, j_pos]
 
-# For each position of Sudoku_data_element
-# matrix = [[value_and_pos_item_set for i in range(cols)] for j in range(rows)]
+# For each position of element in Sudoku_data_set
+# gen_matrix = [[value_and_pos_item_set for i in range(cols)] for j in range(rows)]
 # print("3D Matrix of Zeros = matrix = ...before loop execution")
-# Print matrix = Matrix [ Row1[Set[value, value_row_pos, value_col_pos]], Row2[Set[value, value_row_pos, value_col_pos]], ....]
-# print(matrix)
+# Print gen_matrix = Matrix [ Row1[Set[value, value_row_pos, value_col_pos]], Row2[Set[value, value_row_pos, value_col_pos]], ....]
+# print(gen_matrix)
 
 
 for row in range(0, Sudoku_data_set_len):
-    print("gen_matrix_len = ")
-    print(gen_matrix_len)
-    print("Sudoku_data_set_len = ")
-    print(Sudoku_data_set_len)
+#    print("gen_matrix_len = ")
+#    print(gen_matrix_len)
+#    print("Sudoku_data_set_len = ")
+#    print(Sudoku_data_set_len)
     if gen_matrix_len < Sudoku_data_set_len:
         for element in range(0, Each_Row_len):
-            print("gen_matrix_row_len")
-            print(gen_matrix_row_len)
-            print("Each_Row_len =")
-            print(Each_Row_len)
+#            print("gen_matrix_row_len")
+#            print(gen_matrix_row_len)
+#            print("Each_Row_len =")
+#            print(Each_Row_len)
             if gen_matrix_row_len < Each_Row_len:
                 for item in range(0, num_of_items_in_set):
                     if len(value_and_pos_item_set) < num_of_items_in_set:
@@ -95,14 +97,12 @@ for row in range(0, Sudoku_data_set_len):
                         print("value_and_pos_item_set is")
                         print(value_and_pos_item_set)
                         print("\n")
-#                gen_matrix_row[row][element] = value_and_pos_item_set
                 gen_matrix_row.append(value_and_pos_item_set)
                 print("gen_matrix_row is ")
                 print(gen_matrix_row)
                 print("\n")
                 gen_matrix_row_len = gen_matrix_row_len + 1
                 value_and_pos_item_set = list()
-#        gen_matrix[row] = gen_matrix_row
         gen_matrix.append(gen_matrix_row)
         print("gen_matrix is ")
         print(gen_matrix)
@@ -112,49 +112,50 @@ for row in range(0, Sudoku_data_set_len):
         gen_matrix_row_len = 0
 
 
-# Add the Sudoku problem values in the
-# 'matrix' in the form of [number, i_pos, j_pos]
 
 
-for row in Sudoku_data_set:
-    for elem_val in row:
-        Sudoku_data_row_index = Sudoku_data_set.index(row)
-        elem_index = row.index(elem_val)
-#        print("\n")
-#        print("Sudoku_data_row_index = ")
-#        print(Sudoku_data_row_index)
-#        print("elem_val_index = ")
-#        print(elem_index)
-#        print("matrix[Sudoku_data_row_index][elem_val_index][0]")
-#        print(matrix[Sudoku_data_row_index][elem_index][0])
-#        print("Sudoku_data_set[Sudoku_data_row_index][elem_val_index]")
-#        print(Sudoku_data_set[Sudoku_data_row_index][elem_index])
-#        matrix[Sudoku_data_row_index][elem_index][1] = Sudoku_data_set[Sudoku_data_row_index][elem_index]
 
-#        print("matrix[Sudoku_data_row_index][elem_val_index][0]")
-#        print(matrix[Sudoku_data_row_index][elem_val_index][0])
-
-#        print("matrix[Sudoku_data_row_index][elem_index][0] ...before value assignment")
-#        print(matrix[Sudoku_data_row_index][elem_index][0])
-#        print("[Sudoku_data_set[Sudoku_data_row_index][elem_index]][Sudoku_data_row_index][elem_index] ...before value assignment")
-#        print(Sudoku_data_set[Sudoku_data_row_index][elem_index])
-#
-#        matrix[Sudoku_data_row_index][elem_index][0] = Sudoku_data_set[Sudoku_data_row_index][elem_index]
-#
-#        print("matrix[Sudoku_data_row_index][elem_index][0] ...after value assignment")
-#        print(matrix[Sudoku_data_row_index][elem_index][0])
-#        print("[Sudoku_data_set[Sudoku_data_row_index][elem_index]][Sudoku_data_row_index][elem_index] ...after value assignment")
-#        print(Sudoku_data_set[Sudoku_data_row_index][elem_index])
-#
-#        print("matrix = ...after value assignment")
-#        print(matrix)
-##
-##        matrix[Sudoku_data_set_index][Row_index][2] = Row_index
-##        print("Sudoku_data_set_index[Sudoku_data_set_index][Row_index][2]")
-##        print(Sudoku_data_set[Sudoku_data_set_index][Row_index][2])
+#for row in Sudoku_data_set:
+#    for elem_val in row:
+#        Sudoku_data_row_index = Sudoku_data_set.index(row)
+#        elem_index = row.index(elem_val)
 ##        print("\n")
+##        print("Sudoku_data_row_index = ")
+##        print(Sudoku_data_row_index)
+##        print("elem_val_index = ")
+##        print(elem_index)
+##        print("matrix[Sudoku_data_row_index][elem_val_index][0]")
+##        print(matrix[Sudoku_data_row_index][elem_index][0])
+##        print("Sudoku_data_set[Sudoku_data_row_index][elem_val_index]")
+##        print(Sudoku_data_set[Sudoku_data_row_index][elem_index])
+##        matrix[Sudoku_data_row_index][elem_index][1] = Sudoku_data_set[Sudoku_data_row_index][elem_index]
+#
+##        print("matrix[Sudoku_data_row_index][elem_val_index][0]")
+##        print(matrix[Sudoku_data_row_index][elem_val_index][0])
+#
+##        print("matrix[Sudoku_data_row_index][elem_index][0] ...before value assignment")
+##        print(matrix[Sudoku_data_row_index][elem_index][0])
+##        print("[Sudoku_data_set[Sudoku_data_row_index][elem_index]][Sudoku_data_row_index][elem_index] ...before value assignment")
+##        print(Sudoku_data_set[Sudoku_data_row_index][elem_index])
+##
+##        matrix[Sudoku_data_row_index][elem_index][0] = Sudoku_data_set[Sudoku_data_row_index][elem_index]
+##
+##        print("matrix[Sudoku_data_row_index][elem_index][0] ...after value assignment")
+##        print(matrix[Sudoku_data_row_index][elem_index][0])
+##        print("[Sudoku_data_set[Sudoku_data_row_index][elem_index]][Sudoku_data_row_index][elem_index] ...after value assignment")
+##        print(Sudoku_data_set[Sudoku_data_row_index][elem_index])
+##
+##        print("matrix = ...after value assignment")
+##        print(matrix)
+###
+###        matrix[Sudoku_data_set_index][Row_index][2] = Row_index
+###        print("Sudoku_data_set_index[Sudoku_data_set_index][Row_index][2]")
+###        print(Sudoku_data_set[Sudoku_data_set_index][Row_index][2])
+###        print("\n")
+#
+#print("matrix = ...after loop execution")
+#print(matrix)
+#print("Sudoku_data_set ...after loop execution")
+#print(Sudoku_data_set)
 
-print("matrix = ...after loop execution")
-print(matrix)
-print("Sudoku_data_set ...after loop execution")
-print(Sudoku_data_set)
+
