@@ -6,30 +6,8 @@ Sudoku_len = 9
 rows = Sudoku_len
 cols = Sudoku_len
 
-Row1 = list()
-Row2 = list()
-Row3 = list()
-Row4 = list()
-Row5 = list()
-Row6 = list()
-Row7 = list()
-Row8 = list()
-Row9 = list()
-
-#Col1 = [0]*Sudoku_len
-#Col2 = [0]*Sudoku_len
-#Col3 = [0]*Sudoku_len
-#Col4 = [0]*Sudoku_len
-#Col5 = [0]*Sudoku_len
-#Col6 = [0]*Sudoku_len
-#Col7 = [0]*Sudoku_len
-#Col8 = [0]*Sudoku_len
-#Col9 = [0]*Sudoku_len
-
-
-
 # Create a place holder for storing 'Sudoku matrix'
-Sudoku_data_set = list()
+Sudoku_data_set_r = list()
 
 Row0 = [9, 4, 0, 8, 7, 0, 2, 5, 6]
 Row1 = [5, 1, 2, 0, 0, 9, 7, 0, 3]
@@ -41,15 +19,26 @@ Row6 = [8, 7, 0, 9, 2, 6, 0, 1, 0]
 Row7 = [2, 0, 5, 1, 0, 0, 9, 0, 8]
 Row8 = [1, 9, 6, 0, 3, 8, 0, 2, 7]
 
-Sudoku_data_set = [Row0, Row1, Row2, Row3, Row4, Row5, Row6, Row7, Row8]
-Sudoku_data_set_len = len(Sudoku_data_set)
+Sudoku_data_set_c = list()
+
+Col0 = list()
+Col1 = list()
+Col2 = list()
+Col3 = list()
+Col4 = list()
+Col5 = list()
+Col6 = list()
+Col7 = list()
+Col8 = list()
+
+Sudoku_data_set_c = [Col0, Col1, Col2, Col3, Col4, Col5, Col6, Col7, Col8]
+Sudoku_data_set_r = [Row0, Row1, Row2, Row3, Row4, Row5, Row6, Row7, Row8]
+Sudoku_data_set_r_len = len(Sudoku_data_set_r)
 Each_Row_len = len(Row1)
-print("Sudoku_data_set = ...before loop execution")
-print(Sudoku_data_set)
+Each_Col_Len = Each_Row_len
+print("Sudoku_data_set_r = ...before loop execution")
+print(Sudoku_data_set_r)
 
-
-# Create an place holder for storing [Sudoku_value, Sudoku_value_position_i, Sudoku_value_position_j]
-# Create a place holder of Zeros for the a 3 x 9 x 9 "matrix"
 
 #value_and_pos_item_list = ["Sudoku_element", "Row_number", "Col_number"]
 #value_and_pos_item_len = len(value_and_pos_item_list)
@@ -59,26 +48,23 @@ value_and_pos_item_set_len = len(value_and_pos_item_set)
 #value_and_pos_item_set = [0]*num_of_items_in_set
 #value_and_pos_item_set = []
 gen_matrix_row = list()
-gen_matrix = list()
+gen_matrix_r = list()
 gen_matrix_row_len = len(gen_matrix_row)
-gen_matrix_len = len(gen_matrix)
+gen_matrix_r_len = len(gen_matrix_r)
 
-# Add the Sudoku problem values in the 'matrix'
+# Add the 'Sudoku problem' values mentioned in 'Sudoku_data_set_r' to the 'gen_matrix_r' list()
 # in the form of [number, i_pos, j_pos]
 
-# For each position of element in Sudoku_data_set
-# gen_matrix = [[value_and_pos_item_set for i in range(cols)] for j in range(rows)]
-# print("3D Matrix of Zeros = matrix = ...before loop execution")
-# Print gen_matrix = Matrix [ Row1[Set[value, value_row_pos, value_col_pos]], Row2[Set[value, value_row_pos, value_col_pos]], ....]
-# print(gen_matrix)
+# Print gen_matrix_r = Matrix [ Row1[Set[value, value_row_pos, value_col_pos]], Row2[Set[value, value_row_pos, value_col_pos]], ....]
+# print(gen_matrix_r)
 
 
-for row in range(0, Sudoku_data_set_len):
-#    print("gen_matrix_len = ")
-#    print(gen_matrix_len)
-#    print("Sudoku_data_set_len = ")
-#    print(Sudoku_data_set_len)
-    if gen_matrix_len < Sudoku_data_set_len:
+for row in range(0, Sudoku_data_set_r_len):
+#    print("gen_matrix_r_len = ")
+#    print(gen_matrix_r_len)
+#    print("Sudoku_data_set_r_len = ")
+#    print(Sudoku_data_set_r_len)
+    if gen_matrix_r_len < Sudoku_data_set_r_len:
         for element in range(0, Each_Row_len):
 #            print("gen_matrix_row_len")
 #            print(gen_matrix_row_len)
@@ -88,31 +74,43 @@ for row in range(0, Sudoku_data_set_len):
                 for item in range(0, num_of_items_in_set):
                     if len(value_and_pos_item_set) < num_of_items_in_set:
                         if len(value_and_pos_item_set) == 0:
-                            value_and_pos_item_set.append(Sudoku_data_set[row][element])
+                            value_and_pos_item_set.append(Sudoku_data_set_r[row][element])
                         if len(value_and_pos_item_set) == 1:
                             value_and_pos_item_set.append(row)
                         if len(value_and_pos_item_set) == 2:
                             value_and_pos_item_set.append(element)
 
-                        print("value_and_pos_item_set is")
-                        print(value_and_pos_item_set)
-                        print("\n")
+#                        print("value_and_pos_item_set is")
+#                        print(value_and_pos_item_set)
+#                        print("\n")
                 gen_matrix_row.append(value_and_pos_item_set)
-                print("gen_matrix_row is ")
-                print(gen_matrix_row)
-                print("\n")
+#                print("gen_matrix_row is ")
+#                print(gen_matrix_row)
+#                print("\n")
                 gen_matrix_row_len = gen_matrix_row_len + 1
                 value_and_pos_item_set = list()
-        gen_matrix.append(gen_matrix_row)
-        print("gen_matrix is ")
-        print(gen_matrix)
-        print("\n")
-        gen_matrix_len = gen_matrix_len + 1
+        gen_matrix_r.append(gen_matrix_row)
+#        print("gen_matrix_r is ")
+#        print(gen_matrix_r)
+#        print("\n")
+        gen_matrix_r_len = gen_matrix_r_len + 1
         gen_matrix_row = list()
         gen_matrix_row_len = 0
 
 
+# Generate the Sudoku_data_set matrix in Column form - 'Sudoku_data_set_c'
+# Sort the same Sudoku matrix in the "Column form" as - 'Sudoku_data_set_c'
 
+for row in range(0, Sudoku_data_set_r_len):
+#    print(Sudoku_data_set_r[row])
+    for elem in range(0, Each_Row_len):
+#        print(Sudoku_data_set_r[row][elem])
+        Sudoku_data_set_c[elem].append(Sudoku_data_set_r[row][elem])
+#        print("Sudoku_data_set_c")
+#        print(Sudoku_data_set_c)
+
+print("Sudoku matrix in column form is")
+print(Sudoku_data_set_c)
 
 
 #for row in Sudoku_data_set:
